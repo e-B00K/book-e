@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Library - LuminaBooks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="readerOverlay" class="reader-overlay">
+        <div class="reader-header">
+            <button id="exitReader"><i class="fas fa-arrow-left"></i> Exit Library</button>
+            <div class="reader-meta">
+                <span id="readingTitle">Book Title</span>
+                <span id="readingAuthor">Author Name</span>
+            </div>
+            <div class="reader-tools">
+                <button onclick="changeFontSize(1)"><i class="fas fa-plus"></i></button>
+                <button onclick="changeFontSize(-1)"><i class="fas fa-minus"></i></button>
+            </div>
+        </div>
+        <div class="reader-body">
+            <div id="textContent" class="text-content"></div>
+            <div class="reader-footer"><p>End of Preview</p></div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Lumina<span>Books</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="books.html" class="active">Books</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container page-header">
+        <h1>Explore Our Library</h1>
+        <div class="filter-controls">
+            <input type="text" id="searchBar" placeholder="Search by title or author...">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="fiction">Fiction</option>
+                <option value="sci-fi">Sci-Fi</option>
+                <option value="educational">Educational</option>
+                </select>
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="book-grid" id="bookGrid"></div>
+    </main>
+
+    <div class="modal" id="bookModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
